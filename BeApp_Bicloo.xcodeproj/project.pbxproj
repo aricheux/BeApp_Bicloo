@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		710B4DD820C5CFA900A89744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DD720C5CFA900A89744 /* AppDelegate.swift */; };
-		710B4DDA20C5CFA900A89744 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DD920C5CFA900A89744 /* ViewController.swift */; };
-		710B4DDD20C5CFA900A89744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710B4DDB20C5CFA900A89744 /* Main.storyboard */; };
-		710B4DE020C5CFA900A89744 /* BeApp_Bicloo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DDE20C5CFA900A89744 /* BeApp_Bicloo.xcdatamodeld */; };
+		710B4DDA20C5CFA900A89744 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DD920C5CFA900A89744 /* SearchViewController.swift */; };
+		710B4DDD20C5CFA900A89744 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710B4DDB20C5CFA900A89744 /* SearchView.storyboard */; };
 		710B4DE220C5CFAC00A89744 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710B4DE120C5CFAC00A89744 /* Assets.xcassets */; };
 		710B4DE520C5CFAC00A89744 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710B4DE320C5CFAC00A89744 /* LaunchScreen.storyboard */; };
 		710B4DF020C5CFAC00A89744 /* BeApp_BiclooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DEF20C5CFAC00A89744 /* BeApp_BiclooTests.swift */; };
 		710B4DFB20C5CFAC00A89744 /* BeApp_BiclooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DFA20C5CFAC00A89744 /* BeApp_BiclooUITests.swift */; };
+		710B4E0D20C5D0C200A89744 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710B4E0C20C5D0C200A89744 /* DetailView.storyboard */; };
+		710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +38,8 @@
 /* Begin PBXFileReference section */
 		710B4DD420C5CFA900A89744 /* BeApp_Bicloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeApp_Bicloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		710B4DD720C5CFA900A89744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		710B4DD920C5CFA900A89744 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		710B4DDC20C5CFA900A89744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		710B4DDF20C5CFA900A89744 /* BeApp_Bicloo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeApp_Bicloo.xcdatamodel; sourceTree = "<group>"; };
+		710B4DD920C5CFA900A89744 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		710B4DDC20C5CFA900A89744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SearchView.storyboard; sourceTree = "<group>"; };
 		710B4DE120C5CFAC00A89744 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		710B4DE420C5CFAC00A89744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		710B4DE620C5CFAC00A89744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		710B4DF620C5CFAC00A89744 /* BeApp_BiclooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeApp_BiclooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		710B4DFA20C5CFAC00A89744 /* BeApp_BiclooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeApp_BiclooUITests.swift; sourceTree = "<group>"; };
 		710B4DFC20C5CFAC00A89744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		710B4E0C20C5D0C200A89744 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				710B4DD720C5CFA900A89744 /* AppDelegate.swift */,
-				710B4DD920C5CFA900A89744 /* ViewController.swift */,
-				710B4DDB20C5CFA900A89744 /* Main.storyboard */,
-				710B4DE120C5CFAC00A89744 /* Assets.xcassets */,
-				710B4DE320C5CFAC00A89744 /* LaunchScreen.storyboard */,
-				710B4DE620C5CFAC00A89744 /* Info.plist */,
-				710B4DDE20C5CFA900A89744 /* BeApp_Bicloo.xcdatamodeld */,
+				710B4E0920C5D03A00A89744 /* SearchView */,
+				710B4E0A20C5D04900A89744 /* DetailView */,
+				710B4E0820C5CFDE00A89744 /* Ressources */,
 			);
 			path = BeApp_Bicloo;
 			sourceTree = "<group>";
@@ -126,6 +125,50 @@
 				710B4DFC20C5CFAC00A89744 /* Info.plist */,
 			);
 			path = BeApp_BiclooUITests;
+			sourceTree = "<group>";
+		};
+		710B4E0820C5CFDE00A89744 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				710B4DE120C5CFAC00A89744 /* Assets.xcassets */,
+				710B4DE320C5CFAC00A89744 /* LaunchScreen.storyboard */,
+				710B4DE620C5CFAC00A89744 /* Info.plist */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		710B4E0920C5D03A00A89744 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				710B4DDB20C5CFA900A89744 /* SearchView.storyboard */,
+				710B4E0B20C5D06200A89744 /* Controller */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		710B4E0A20C5D04900A89744 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				710B4E0C20C5D0C200A89744 /* DetailView.storyboard */,
+				710B4E0E20C5D0C600A89744 /* Controller */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		710B4E0B20C5D06200A89744 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				710B4DD920C5CFA900A89744 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		710B4E0E20C5D0C600A89744 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +277,8 @@
 			files = (
 				710B4DE520C5CFAC00A89744 /* LaunchScreen.storyboard in Resources */,
 				710B4DE220C5CFAC00A89744 /* Assets.xcassets in Resources */,
-				710B4DDD20C5CFA900A89744 /* Main.storyboard in Resources */,
+				710B4E0D20C5D0C200A89744 /* DetailView.storyboard in Resources */,
+				710B4DDD20C5CFA900A89744 /* SearchView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				710B4DE020C5CFA900A89744 /* BeApp_Bicloo.xcdatamodeld in Sources */,
-				710B4DDA20C5CFA900A89744 /* ViewController.swift in Sources */,
+				710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */,
+				710B4DDA20C5CFA900A89744 /* SearchViewController.swift in Sources */,
 				710B4DD820C5CFA900A89744 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,12 +341,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		710B4DDB20C5CFA900A89744 /* Main.storyboard */ = {
+		710B4DDB20C5CFA900A89744 /* SearchView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				710B4DDC20C5CFA900A89744 /* Base */,
 			);
-			name = Main.storyboard;
+			name = SearchView.storyboard;
 			sourceTree = "<group>";
 		};
 		710B4DE320C5CFAC00A89744 /* LaunchScreen.storyboard */ = {
@@ -436,7 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
-				INFOPLIST_FILE = BeApp_Bicloo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BeApp_Bicloo/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
-				INFOPLIST_FILE = BeApp_Bicloo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BeApp_Bicloo/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,19 +632,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		710B4DDE20C5CFA900A89744 /* BeApp_Bicloo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				710B4DDF20C5CFA900A89744 /* BeApp_Bicloo.xcdatamodel */,
-			);
-			currentVersion = 710B4DDF20C5CFA900A89744 /* BeApp_Bicloo.xcdatamodel */;
-			path = BeApp_Bicloo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 710B4DCC20C5CFA900A89744 /* Project object */;
 }
