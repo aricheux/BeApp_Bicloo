@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00023BC77761081B33C5D106 /* Pods_BeApp_Bicloo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F976549037324DC73E5C67EA /* Pods_BeApp_Bicloo.framework */; };
 		710B4DD820C5CFA900A89744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DD720C5CFA900A89744 /* AppDelegate.swift */; };
 		710B4DDA20C5CFA900A89744 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DD920C5CFA900A89744 /* SearchViewController.swift */; };
 		710B4DDD20C5CFA900A89744 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710B4DDB20C5CFA900A89744 /* SearchView.storyboard */; };
@@ -16,6 +17,8 @@
 		710B4DFB20C5CFAC00A89744 /* BeApp_BiclooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DFA20C5CFAC00A89744 /* BeApp_BiclooUITests.swift */; };
 		710B4E0D20C5D0C200A89744 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710B4E0C20C5D0C200A89744 /* DetailView.storyboard */; };
 		710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */; };
+		F646DC9158C473E719C5AB7A /* Pods_BeApp_BiclooUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4830F0DBF5FCA277DB699C29 /* Pods_BeApp_BiclooUITests.framework */; };
+		F735C6D00FEE28BA38BAD660 /* Pods_BeApp_BiclooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C568E9D0EB1954E9849F0 /* Pods_BeApp_BiclooTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12192E0B84D8FA2AC32FE93C /* Pods-BeApp_BiclooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_BiclooTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_BiclooTests/Pods-BeApp_BiclooTests.release.xcconfig"; sourceTree = "<group>"; };
+		331C568E9D0EB1954E9849F0 /* Pods_BeApp_BiclooTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeApp_BiclooTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4830F0DBF5FCA277DB699C29 /* Pods_BeApp_BiclooUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeApp_BiclooUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		527099A97BE19B63E5A84E72 /* Pods-BeApp_BiclooUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_BiclooUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_BiclooUITests/Pods-BeApp_BiclooUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		710B4DD420C5CFA900A89744 /* BeApp_Bicloo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeApp_Bicloo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		710B4DD720C5CFA900A89744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		710B4DD920C5CFA900A89744 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		710B4DFC20C5CFAC00A89744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		710B4E0C20C5D0C200A89744 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7367471C1FDAEAF09C7803A7 /* Pods-BeApp_Bicloo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_Bicloo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo.release.xcconfig"; sourceTree = "<group>"; };
+		B10EA47FCEE27E76AB1F1EB0 /* Pods-BeApp_BiclooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_BiclooTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_BiclooTests/Pods-BeApp_BiclooTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C04920348C93DFCDE86D4365 /* Pods-BeApp_Bicloo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_Bicloo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo.debug.xcconfig"; sourceTree = "<group>"; };
+		E9511677AFDFF2ABB704044A /* Pods-BeApp_BiclooUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_BiclooUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_BiclooUITests/Pods-BeApp_BiclooUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F976549037324DC73E5C67EA /* Pods_BeApp_Bicloo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeApp_Bicloo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00023BC77761081B33C5D106 /* Pods_BeApp_Bicloo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F735C6D00FEE28BA38BAD660 /* Pods_BeApp_BiclooTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F646DC9158C473E719C5AB7A /* Pods_BeApp_BiclooUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EDBE76BCD9B2654D7D8213A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C04920348C93DFCDE86D4365 /* Pods-BeApp_Bicloo.debug.xcconfig */,
+				7367471C1FDAEAF09C7803A7 /* Pods-BeApp_Bicloo.release.xcconfig */,
+				B10EA47FCEE27E76AB1F1EB0 /* Pods-BeApp_BiclooTests.debug.xcconfig */,
+				12192E0B84D8FA2AC32FE93C /* Pods-BeApp_BiclooTests.release.xcconfig */,
+				527099A97BE19B63E5A84E72 /* Pods-BeApp_BiclooUITests.debug.xcconfig */,
+				E9511677AFDFF2ABB704044A /* Pods-BeApp_BiclooUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		43B853B5B86504EA94849D21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F976549037324DC73E5C67EA /* Pods_BeApp_Bicloo.framework */,
+				331C568E9D0EB1954E9849F0 /* Pods_BeApp_BiclooTests.framework */,
+				4830F0DBF5FCA277DB699C29 /* Pods_BeApp_BiclooUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		710B4DCB20C5CFA900A89744 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +123,8 @@
 				710B4DEE20C5CFAC00A89744 /* BeApp_BiclooTests */,
 				710B4DF920C5CFAC00A89744 /* BeApp_BiclooUITests */,
 				710B4DD520C5CFA900A89744 /* Products */,
+				3EDBE76BCD9B2654D7D8213A /* Pods */,
+				43B853B5B86504EA94849D21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 710B4DFF20C5CFAC00A89744 /* Build configuration list for PBXNativeTarget "BeApp_Bicloo" */;
 			buildPhases = (
+				2EB6D212DC92BAB95A5FECDE /* [CP] Check Pods Manifest.lock */,
 				710B4DD020C5CFA900A89744 /* Sources */,
 				710B4DD120C5CFA900A89744 /* Frameworks */,
 				710B4DD220C5CFA900A89744 /* Resources */,
+				E33D37DBAA958796C0C31F7E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 710B4E0220C5CFAC00A89744 /* Build configuration list for PBXNativeTarget "BeApp_BiclooTests" */;
 			buildPhases = (
+				844997CE92DBB356D548EF5F /* [CP] Check Pods Manifest.lock */,
 				710B4DE720C5CFAC00A89744 /* Sources */,
 				710B4DE820C5CFAC00A89744 /* Frameworks */,
 				710B4DE920C5CFAC00A89744 /* Resources */,
@@ -213,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 710B4E0520C5CFAC00A89744 /* Build configuration list for PBXNativeTarget "BeApp_BiclooUITests" */;
 			buildPhases = (
+				D281D8F8E20E8B37D0C57301 /* [CP] Check Pods Manifest.lock */,
 				710B4DF220C5CFAC00A89744 /* Sources */,
 				710B4DF320C5CFAC00A89744 /* Frameworks */,
 				710B4DF420C5CFAC00A89744 /* Resources */,
@@ -297,6 +341,85 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EB6D212DC92BAB95A5FECDE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeApp_Bicloo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		844997CE92DBB356D548EF5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeApp_BiclooTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D281D8F8E20E8B37D0C57301 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeApp_BiclooUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E33D37DBAA958796C0C31F7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		710B4DD020C5CFA900A89744 /* Sources */ = {
@@ -476,15 +599,13 @@
 		};
 		710B4E0020C5CFAC00A89744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C04920348C93DFCDE86D4365 /* Pods-BeApp_Bicloo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = "$(SRCROOT)/BeApp_Bicloo/Ressources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-Bicloo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -494,15 +615,13 @@
 		};
 		710B4E0120C5CFAC00A89744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7367471C1FDAEAF09C7803A7 /* Pods-BeApp_Bicloo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = "$(SRCROOT)/BeApp_Bicloo/Ressources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-Bicloo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -512,17 +631,14 @@
 		};
 		710B4E0320C5CFAC00A89744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10EA47FCEE27E76AB1F1EB0 /* Pods-BeApp_BiclooTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -533,17 +649,14 @@
 		};
 		710B4E0420C5CFAC00A89744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12192E0B84D8FA2AC32FE93C /* Pods-BeApp_BiclooTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -554,16 +667,13 @@
 		};
 		710B4E0620C5CFAC00A89744 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 527099A97BE19B63E5A84E72 /* Pods-BeApp_BiclooUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -574,16 +684,13 @@
 		};
 		710B4E0720C5CFAC00A89744 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9511677AFDFF2ABB704044A /* Pods-BeApp_BiclooUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
