@@ -12,6 +12,8 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataManager.shared.getData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 

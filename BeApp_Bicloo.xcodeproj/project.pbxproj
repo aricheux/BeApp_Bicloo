@@ -17,6 +17,8 @@
 		710B4DFB20C5CFAC00A89744 /* BeApp_BiclooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4DFA20C5CFAC00A89744 /* BeApp_BiclooUITests.swift */; };
 		710B4E0D20C5D0C200A89744 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710B4E0C20C5D0C200A89744 /* DetailView.storyboard */; };
 		710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */; };
+		71B31A6520C5D59500B2F0FC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B31A6420C5D59500B2F0FC /* DataManager.swift */; };
+		71B31A6820C5D63100B2F0FC /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B31A6720C5D63100B2F0FC /* BikeStation.swift */; };
 		F646DC9158C473E719C5AB7A /* Pods_BeApp_BiclooUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4830F0DBF5FCA277DB699C29 /* Pods_BeApp_BiclooUITests.framework */; };
 		F735C6D00FEE28BA38BAD660 /* Pods_BeApp_BiclooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C568E9D0EB1954E9849F0 /* Pods_BeApp_BiclooTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		710B4DFC20C5CFAC00A89744 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		710B4E0C20C5D0C200A89744 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		71B31A6420C5D59500B2F0FC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		71B31A6720C5D63100B2F0FC /* BikeStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStation.swift; sourceTree = "<group>"; };
 		7367471C1FDAEAF09C7803A7 /* Pods-BeApp_Bicloo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_Bicloo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo.release.xcconfig"; sourceTree = "<group>"; };
 		B10EA47FCEE27E76AB1F1EB0 /* Pods-BeApp_BiclooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_BiclooTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_BiclooTests/Pods-BeApp_BiclooTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C04920348C93DFCDE86D4365 /* Pods-BeApp_Bicloo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_Bicloo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				710B4DD720C5CFA900A89744 /* AppDelegate.swift */,
+				71B31A6320C5D56700B2F0FC /* Manager */,
+				71B31A6620C5D60D00B2F0FC /* Model */,
 				710B4E0920C5D03A00A89744 /* SearchView */,
 				710B4E0A20C5D04900A89744 /* DetailView */,
 				710B4E0820C5CFDE00A89744 /* Ressources */,
@@ -209,6 +215,22 @@
 				710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		71B31A6320C5D56700B2F0FC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				71B31A6420C5D59500B2F0FC /* DataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		71B31A6620C5D60D00B2F0FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71B31A6720C5D63100B2F0FC /* BikeStation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +449,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */,
+				71B31A6520C5D59500B2F0FC /* DataManager.swift in Sources */,
+				71B31A6820C5D63100B2F0FC /* BikeStation.swift in Sources */,
 				710B4DDA20C5CFA900A89744 /* SearchViewController.swift in Sources */,
 				710B4DD820C5CFA900A89744 /* AppDelegate.swift in Sources */,
 			);
@@ -605,7 +629,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = "$(SRCROOT)/BeApp_Bicloo/Ressources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-Bicloo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -621,7 +648,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = "$(SRCROOT)/BeApp_Bicloo/Ressources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-Bicloo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -638,7 +668,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -656,7 +690,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -673,7 +711,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -690,7 +732,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
 				INFOPLIST_FILE = BeApp_BiclooUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.BeApp-BiclooUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
