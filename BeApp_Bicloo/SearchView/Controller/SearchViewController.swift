@@ -18,7 +18,16 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupTableView()
         getContent()
+    }
+    
+    func setupTableView(){
+        tableView.accessibilityIdentifier = "bikeStationTable"
+        tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: "SearchCell", bundle: nil), forCellReuseIdentifier: "SearchCell")
+        tableView.register(UINib(nibName: "SegmentedControlCell", bundle: nil), forCellReuseIdentifier: "SegmentedControlCell")
+        tableView.register(UINib(nibName: "BikeStationCell", bundle: nil), forCellReuseIdentifier: "BikeStationCell")
     }
 
     func getContent(){
@@ -57,17 +66,54 @@ class SearchViewController: UITableViewController {
     }
 }
 
-extension SearchViewController {    
+// UITableView datasource and delegate method
+extension SearchViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.realmBikeStations.count
+        if section == 2 {
+            return self.realmBikeStations.count
+        }
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = self.realmBikeStations[indexPath.row].name
-        
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
+            
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentedControlCell", for: indexPath) as! SegmentedControlCell
+            
+            return cell
+            
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BikeStationCell", for: indexPath) as! BikeStationCell
+            return cell
+            
+        default:
+            return UITableViewCell()
+            
+        }
+    }
+    
+    /// Define the height of the cell according to the section
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 80
+        case 1:
+            return 60
+        case 2:
+            return 100
+        default:
+            return CGFloat()
+        }
     }
 }
 

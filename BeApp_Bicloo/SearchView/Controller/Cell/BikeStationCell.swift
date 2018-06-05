@@ -9,7 +9,17 @@
 import UIKit
 
 class BikeStationCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var bikeStationName: UILabel!
+    @IBOutlet weak var bikeImage: UIImageView!
+    
+    @IBOutlet weak var updatedDate: UILabel!
+    @IBOutlet weak var bikeStationStatus: UILabel!
+    @IBOutlet weak var bankingImage: UIImageView!
+    @IBOutlet weak var parkingAvailable: UILabel!
+    @IBOutlet weak var parkingImage: UIImageView!
+    @IBOutlet weak var bikeAvailable: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
