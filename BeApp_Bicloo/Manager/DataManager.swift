@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum requestResult {
-    case success([BikeStation]), failure(Error)
+    case success([StationData]), failure(Error)
 }
 
 class DataManager {
@@ -26,7 +26,7 @@ class DataManager {
                 if let data = response.data {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .millisecondsSince1970
-                    let bikeStation = try! decoder.decode([BikeStation].self, from: data)
+                    let bikeStation = try! decoder.decode([StationData].self, from: data)
                     completion(.success(bikeStation))
                 }
                 

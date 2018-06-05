@@ -7,23 +7,40 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Position: Codable {
-    var lat: Double
-    var lng: Double
-}
-
-struct BikeStation: Codable {
-    var address: String
-    var available_bike_stands: Int
-    var available_bikes: Int
-    var banking: Bool
-    var bike_stands: Int
-    var bonus: Bool
-    var contract_name: String
-    var last_update: Date
-    var name: String
-    var number: Int
-    var position: Position
-    var status: String
+class BikeStation: Object {
+    @objc dynamic var address: String = ""
+    @objc dynamic var available_bike_stands: Int = 0
+    @objc dynamic var available_bikes: Int = 0
+    @objc dynamic var banking: Bool = false
+    @objc dynamic var bike_stands: Int = 0
+    @objc dynamic var bonus: Bool = false
+    @objc dynamic var contract_name: String = ""
+    @objc dynamic var last_update: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var number: Int = 0
+    @objc dynamic var lattidude: Double = 0.0
+    @objc dynamic var longitude: Double = 0.0
+    @objc dynamic var status: String = ""
+    
+    func initWith(stationData: StationData){
+        self.address = stationData.address
+        self.available_bike_stands = stationData.available_bike_stands
+        self.available_bikes = stationData.available_bikes
+        self.banking = stationData.banking
+        self.bike_stands = stationData.bike_stands
+        self.address = stationData.address
+        self.bonus = stationData.bonus
+        self.contract_name = stationData.contract_name
+        self.name = stationData.name
+        self.lattidude = stationData.position.lat
+        self.longitude = stationData.position.lng
+        self.status = stationData.status
+        // Formattage de la date
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "H:m dd/MM/y"
+        self.last_update = dateFormater.string(from: stationData.last_update)
+        print(self.last_update)
+    }
 }
