@@ -94,6 +94,10 @@ extension SearchViewController {
             
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BikeStationCell", for: indexPath) as! BikeStationCell
+            cell.contentView.layer.borderColor = UIColor.black.cgColor
+            cell.contentView.layer.borderWidth = 1
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.masksToBounds = true
             cell.setupContentWith(bikeStation: self.realmBikeStations[indexPath.row])
             return cell
             
