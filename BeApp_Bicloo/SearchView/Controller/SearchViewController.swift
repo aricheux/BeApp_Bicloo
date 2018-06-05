@@ -9,10 +9,11 @@
 import UIKit
 import RealmSwift
 
-class SearchViewController: UIViewController {
+class SearchViewController: UITableViewController {
     
     let dataManager = DataManager()
     let realm = try! Realm()
+    var realmBikeStations: [BikeStation] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +23,11 @@ class SearchViewController: UIViewController {
 
     func getContent(){
         let realmBikeStation = realm.objects(BikeStation.self)
-        
         if realmBikeStation.count == 0 {
             getBikeStationData()
         } else {
-            //self.tableView.reloadData()
+            self.realmBikeStations = Array(realm.objects(BikeStation.self))
+            self.tableView.reloadData()
         }
     }
     
@@ -36,22 +37,37 @@ class SearchViewController: UIViewController {
             case .failure(let error):
                 print(error)
             case .success(let bikeData):
-                self.updateRealmDataWith(bikeData)
+                self.writeRealmDataWith(bikeData)
+                self.tableView.reloadData()
             }
         }
     }
     
-    func updateRealmDataWith(_ bikeData: [StationData]) {
-        var bikeStation: [BikeStation] = []
+    func writeRealmDataWith(_ bikeData: [StationData]) {
+        self.realmBikeStations.removeAll()
         for bikeData in bikeData {
-            bikeStation.append(BikeStation())
-            bikeStation.last?.initWith(stationData: bikeData)
+            self.realmBikeStations.append(BikeStation())
+            self.realmBikeStations.last?.initWith(stationData: bikeData)
         }
         
         try! realm.write {
             realm.deleteAll()
-            realm.add(bikeStation)
+            realm.add(self.realmBikeStations)
         }
+    }
+}
+
+extension SearchViewController {    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.realmBikeStations.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+        cell.textLabel?.text = self.realmBikeStations[indexPath.row].name
+        
+        return cell
     }
 }
 
