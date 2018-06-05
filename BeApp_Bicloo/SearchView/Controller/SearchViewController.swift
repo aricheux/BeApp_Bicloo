@@ -28,6 +28,9 @@ class SearchViewController: UITableViewController {
         tableView.register(UINib(nibName: "SearchCell", bundle: nil), forCellReuseIdentifier: "SearchCell")
         tableView.register(UINib(nibName: "SegmentedControlCell", bundle: nil), forCellReuseIdentifier: "SegmentedControlCell")
         tableView.register(UINib(nibName: "BikeStationCell", bundle: nil), forCellReuseIdentifier: "BikeStationCell")
+        // Add Refresh Control to Table View
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refreshStationData(_:)), for: .valueChanged)
     }
 
     func getContent(){
@@ -35,7 +38,8 @@ class SearchViewController: UITableViewController {
         if realmBikeStation.count == 0 {
             getBikeStationData()
         } else {
-            self.realmBikeStations = Array(realm.objects(BikeStation.self))
+            //let array = realmBikeStation.filter("name CONTAINS 'A'")
+            self.realmBikeStations = Array(realmBikeStation)
             self.tableView.reloadData()
         }
     }
@@ -63,6 +67,11 @@ class SearchViewController: UITableViewController {
             realm.deleteAll()
             realm.add(self.realmBikeStations)
         }
+    }
+    
+    @objc func refreshStationData(_ sender: Any) {
+        self.getBikeStationData()
+        self.refreshControl?.endRefreshing()
     }
 }
 
