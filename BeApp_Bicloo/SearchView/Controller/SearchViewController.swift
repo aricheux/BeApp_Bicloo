@@ -94,6 +94,7 @@ extension SearchViewController {
             
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BikeStationCell", for: indexPath) as! BikeStationCell
+            cell.setupContentWith(bikeStation: self.realmBikeStations[indexPath.row])
             return cell
             
         default:

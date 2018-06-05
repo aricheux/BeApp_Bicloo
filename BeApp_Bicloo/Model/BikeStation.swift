@@ -24,7 +24,7 @@ class BikeStation: Object {
     @objc dynamic var longitude: Double = 0.0
     @objc dynamic var status: String = ""
     
-    func initWith(stationData: StationData){
+    func initWith(stationData: StationData) {
         self.address = stationData.address
         self.available_bike_stands = stationData.available_bike_stands
         self.available_bikes = stationData.available_bikes
@@ -39,7 +39,7 @@ class BikeStation: Object {
         self.status = stationData.status
         // Formattage de la date
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "HH:mm dd/MM/y"
-        self.last_update = dateFormater.string(from: stationData.last_update)
+        dateFormater.dateFormat = "HH:mm' le 'dd/MM/y"
+        self.last_update = "Mise à jour à " + dateFormater.string(from: stationData.last_update)
     }
 }

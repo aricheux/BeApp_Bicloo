@@ -59,7 +59,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwM-bj-UJ8">
-                        <rect key="frame" x="258.5" y="33" width="45.5" height="35"/>
+                        <rect key="frame" x="244" y="33" width="45.5" height="35"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="zlC-V9-E47" firstAttribute="leading" secondItem="fZl-k4-rRG" secondAttribute="trailing" constant="16" id="3Mn-Ow-TBv"/>
-                    <constraint firstAttribute="trailing" secondItem="YwM-bj-UJ8" secondAttribute="trailing" constant="16" id="5b8-0D-mbE"/>
+                    <constraint firstItem="YwM-bj-UJ8" firstAttribute="leading" secondItem="bbQ-HX-1sl" secondAttribute="trailing" constant="12" id="94I-5G-Vbs"/>
                     <constraint firstAttribute="bottom" secondItem="oqk-Oj-hWA" secondAttribute="bottom" constant="4" id="AuA-B7-RPA"/>
                     <constraint firstItem="YwM-bj-UJ8" firstAttribute="top" secondItem="8Nq-FV-cSo" secondAttribute="bottom" constant="8" id="CUG-25-SSR"/>
                     <constraint firstItem="bbQ-HX-1sl" firstAttribute="top" secondItem="8Nq-FV-cSo" secondAttribute="bottom" constant="8" id="J7P-i1-C5k"/>
@@ -98,11 +98,12 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bankingImage" destination="bbQ-HX-1sl" id="mRn-cS-JEO"/>
+                <outlet property="bikeAvailable" destination="fZl-k4-rRG" id="Sll-d4-KoO"/>
                 <outlet property="bikeImage" destination="hlk-B3-Myj" id="slG-mG-vxw"/>
-                <outlet property="bikeStationName" destination="8Nq-FV-cSo" id="9zA-5J-3kI"/>
-                <outlet property="bikeStationStatus" destination="YwM-bj-UJ8" id="HK2-vL-GsC"/>
                 <outlet property="parkingAvailable" destination="k5a-zA-lx5" id="US2-Qq-1J0"/>
                 <outlet property="parkingImage" destination="zlC-V9-E47" id="HrO-nt-MUU"/>
+                <outlet property="stationName" destination="8Nq-FV-cSo" id="WLL-Qu-5Jd"/>
+                <outlet property="stationStatus" destination="YwM-bj-UJ8" id="bnZ-lo-lEX"/>
                 <outlet property="updatedDate" destination="oqk-Oj-hWA" id="SXd-lP-zym"/>
             </connections>
         </tableViewCell>
