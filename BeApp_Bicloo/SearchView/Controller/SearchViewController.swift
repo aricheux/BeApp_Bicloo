@@ -16,27 +16,37 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let bike = realm.objects(BikeStation.self)
-        print(bike.count)
 
         getContent()
     }
 
     func getContent(){
+        let realmBikeStation = realm.objects(BikeStation.self)
+        
+        if realmBikeStation.count == 0 {
+            getBikeStationData()
+        } else {
+            //self.tableView.reloadData()
+        }
+    }
+    
+    func getBikeStationData(){
         dataManager.getBikeStationData { (result) in
             switch result {
             case .failure(let error):
                 print(error)
-            case .success(let bikeStation):
-                let bike = BikeStation()
-                bike.initWith(stationData: bikeStation[0])
-                self.saveBikeStationToCore(bike)
+            case .success(let bikeData):
+                self.updateRealmDataWith(bikeData)
             }
         }
     }
     
-    func saveBikeStationToCore(_ bikeStation: BikeStation) {
+    func updateRealmDataWith(_ bikeData: [StationData]) {
+        var bikeStation: [BikeStation] = []
+        for bikeData in bikeData {
+            bikeStation.append(BikeStation())
+            bikeStation.last?.initWith(stationData: bikeData)
+        }
         
         try! realm.write {
             realm.deleteAll()

@@ -39,8 +39,7 @@ class BikeStation: Object {
         self.status = stationData.status
         // Formattage de la date
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "H:m dd/MM/y"
+        dateFormater.dateFormat = "HH:mm dd/MM/y"
         self.last_update = dateFormater.string(from: stationData.last_update)
-        print(self.last_update)
     }
 }
