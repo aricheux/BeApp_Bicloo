@@ -9,24 +9,29 @@
 import Foundation
 import Alamofire
 
+enum requestResult {
+    case success([BikeStation]), failure(Error)
+}
+
 class DataManager {
     static let shared = DataManager()
     let JCDecauxUrl = "https://api.jcdecaux.com/vls/v1/stations?contract=Nantes"
     let JCDecauxApiKey = "97a7e4e1830bbd06f3d9041ce47a6cc64e175806"
     
-   // func getData(completion: @escaping (JSON, Error?) -> ()) {
-    func getData(){
+    func getBikeStationData(completion: @escaping (requestResult) -> ()) {
         let param = ["apiKey": JCDecauxApiKey]
         
         Alamofire.request(JCDecauxUrl, method: .get, parameters: param, encoding: URLEncoding.default).responseJSON { response in
             switch response.result {
             case .success:
-                if let reponse = response.result.value {
-                    print(response)
-//                    completion(JSON(reponse), nil)
+                if let data = response.data {
+                    let decoder = JSONDecoder()
+                    let bikeStation = try! decoder.decode([BikeStation].self, from: data)
+                    completion(.success(bikeStation))
                 }
-            case .failure(let error): break
-//                completion(JSON.null, error)
+                
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

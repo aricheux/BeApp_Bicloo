@@ -12,16 +12,21 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DataManager.shared.getData()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        getContent()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func getContent(){
+        DataManager.shared.getBikeStationData { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let bikeStation):
+                for bike in bikeStation {
+                    print(bike.name)
+                }
+            }
+        }
     }
-
-
 }
 
