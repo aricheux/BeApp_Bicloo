@@ -21,12 +21,13 @@
                 <subviews>
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tF2-0S-InG">
                         <rect key="frame" x="8" y="8" width="304" height="54.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <segments>
                             <segment title="ALL"/>
                             <segment title="OPEN"/>
                             <segment title="CLOSE"/>
                         </segments>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </segmentedControl>
                 </subviews>
                 <constraints>
@@ -36,6 +37,7 @@
                     <constraint firstAttribute="bottom" secondItem="tF2-0S-InG" secondAttribute="bottom" constant="8" id="eSf-g8-L6m"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="segmentControl" destination="tF2-0S-InG" id="s9d-tY-ZnG"/>

@@ -21,6 +21,7 @@
                 <subviews>
                     <searchBar contentMode="redraw" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="iE6-yK-IHj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                        <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textInputTraits key="textInputTraits"/>
                         <scopeButtonTitles>
                             <string>Title</string>

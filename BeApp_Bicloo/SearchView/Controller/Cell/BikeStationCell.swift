@@ -27,12 +27,23 @@ class BikeStationCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    func setupBorder() {
+        self.contentView.layer.borderColor = UIColor.black.cgColor
+        self.contentView.layer.borderWidth = 1
+        self.contentView.layer.cornerRadius = 10
+        self.contentView.layer.masksToBounds = true
     }
     
     func setupContentWith(bikeStation: BikeStation) {
         self.stationName.text = bikeStation.name
         self.stationStatus.text = bikeStation.status
+        if bikeStation.status == "OPEN" {
+            self.stationStatus.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        } else {
+            self.stationStatus.textColor = UIColor.red
+        }
         self.bikeAvailable.text = " \(bikeStation.available_bikes) / \(bikeStation.bike_stands)"
         self.parkingAvailable.text = "\(bikeStation.available_bike_stands)"
         self.updatedDate.text = bikeStation.last_update

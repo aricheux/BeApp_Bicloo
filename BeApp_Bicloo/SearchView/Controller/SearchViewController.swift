@@ -68,6 +68,20 @@ class SearchViewController: UITableViewController {
 
 // UITableView datasource and delegate method
 extension SearchViewController {
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 80
+        case 1:
+            return 60
+        case 2:
+            return 100
+        default:
+            return CGFloat()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -94,30 +108,13 @@ extension SearchViewController {
             
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BikeStationCell", for: indexPath) as! BikeStationCell
-            cell.contentView.layer.borderColor = UIColor.black.cgColor
-            cell.contentView.layer.borderWidth = 1
-            cell.contentView.layer.cornerRadius = 10
-            cell.contentView.layer.masksToBounds = true
+            cell.setupBorder()
             cell.setupContentWith(bikeStation: self.realmBikeStations[indexPath.row])
             return cell
             
         default:
             return UITableViewCell()
             
-        }
-    }
-    
-    /// Define the height of the cell according to the section
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 80
-        case 1:
-            return 60
-        case 2:
-            return 100
-        default:
-            return CGFloat()
         }
     }
 }
