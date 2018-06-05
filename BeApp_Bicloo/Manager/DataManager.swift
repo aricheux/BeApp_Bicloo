@@ -14,7 +14,6 @@ enum requestResult {
 }
 
 class DataManager {
-    static let shared = DataManager()
     let JCDecauxUrl = "https://api.jcdecaux.com/vls/v1/stations?contract=Nantes"
     let JCDecauxApiKey = "97a7e4e1830bbd06f3d9041ce47a6cc64e175806"
     
@@ -26,6 +25,7 @@ class DataManager {
             case .success:
                 if let data = response.data {
                     let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .millisecondsSince1970
                     let bikeStation = try! decoder.decode([BikeStation].self, from: data)
                     completion(.success(bikeStation))
                 }

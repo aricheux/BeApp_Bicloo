@@ -26,6 +26,4 @@ struct BikeStation: Codable {
     var number: Int
     var position: Position
     var status: String
-    //var latitude: Double
-    //var longitude: Double
 }

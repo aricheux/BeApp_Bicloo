@@ -9,6 +9,8 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    let dataManager = DataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +19,12 @@ class SearchViewController: UIViewController {
     }
 
     func getContent(){
-        DataManager.shared.getBikeStationData { (result) in
+        dataManager.getBikeStationData { (result) in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let bikeStation):
-                for bike in bikeStation {
-                    print(bike.name)
-                }
+                print(bikeStation)
             }
         }
     }
