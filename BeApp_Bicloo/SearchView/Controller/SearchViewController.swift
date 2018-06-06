@@ -14,25 +14,30 @@ class SearchViewController: UITableViewController {
     let dataManager = DataManager()
     let realm = try! Realm()
     var realmBikeStations: [BikeStation] = []
-
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupTableView()
+        
+        setupContent()
         getContent()
+    }
+    
+    func setupContent() {
+        setupTableView()
     }
     
     func setupTableView(){
         tableView.accessibilityIdentifier = "bikeStationTable"
         tableView.tableFooterView = UIView()
-        tableView.register(UINib(nibName: "SearchCell", bundle: nil), forCellReuseIdentifier: "SearchCell")
         tableView.register(UINib(nibName: "SegmentedControlCell", bundle: nil), forCellReuseIdentifier: "SegmentedControlCell")
         tableView.register(UINib(nibName: "BikeStationCell", bundle: nil), forCellReuseIdentifier: "BikeStationCell")
         // Add Refresh Control to Table View
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(refreshStationData(_:)), for: .valueChanged)
     }
-
+    
     func getContent(){
         let realmBikeStation = realm.objects(BikeStation.self)
         if realmBikeStation.count == 0 {
@@ -73,18 +78,28 @@ class SearchViewController: UITableViewController {
         self.getBikeStationData()
         self.refreshControl?.endRefreshing()
     }
+    
+    @objc func segmentControlChanged(_ sender: UISegmentedControl) {
+        
+        if let segmentTitle = sender.titleForSegment(at: sender.selectedSegmentIndex) {
+            var resultBikeStation = realm.objects(BikeStation.self)
+            if sender.selectedSegmentIndex > 0 {
+                resultBikeStation = resultBikeStation.filter("status CONTAINS '\(segmentTitle)'")
+            }
+            self.realmBikeStations = Array(resultBikeStation)
+            self.tableView.reloadData()
+        }
+    }
 }
 
 // UITableView datasource and delegate method
 extension SearchViewController {
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 80
-        case 1:
             return 60
-        case 2:
+        case 1:
             return 100
         default:
             return CGFloat()
@@ -92,30 +107,25 @@ extension SearchViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 2 {
+        if section == 1 {
             return self.realmBikeStations.count
         }
         return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentedControlCell", for: indexPath) as! SegmentedControlCell
+            cell.segmentControl.addTarget(self, action: #selector(self.segmentControlChanged(_:)), for: .valueChanged)
             return cell
             
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SegmentedControlCell", for: indexPath) as! SegmentedControlCell
-            
-            return cell
-            
-        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BikeStationCell", for: indexPath) as! BikeStationCell
             cell.setupBorder()
             cell.setupContentWith(bikeStation: self.realmBikeStations[indexPath.row])
@@ -125,6 +135,18 @@ extension SearchViewController {
             return UITableViewCell()
             
         }
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("textChanged")
+        let text = searchText.uppercased()
+        
+        var resultBikeStation = realm.objects(BikeStation.self)
+        resultBikeStation = resultBikeStation.filter("address CONTAINS '\(text)'")
+        self.realmBikeStations = Array(resultBikeStation)
+        self.tableView.reloadData()
     }
 }
 
