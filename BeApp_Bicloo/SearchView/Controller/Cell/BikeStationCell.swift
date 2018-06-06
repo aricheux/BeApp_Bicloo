@@ -42,7 +42,7 @@ class BikeStationCell: UITableViewCell {
     }
     
     func setupContentWith(bikeStation: BikeStation) {
-        self.stationName.text = bikeStation.address
+        self.stationName.text = bikeStation.name
         self.stationStatus.text = bikeStation.status
         if bikeStation.status == "OPEN" {
             self.stationStatus.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)

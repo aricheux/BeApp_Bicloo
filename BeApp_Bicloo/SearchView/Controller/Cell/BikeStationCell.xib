@@ -30,7 +30,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="TUL-eA-1lY"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>

@@ -26,4 +26,24 @@ struct StationData: Codable {
     var number: Int
     var position: Position
     var status: String
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        address = try values.decode(String.self, forKey: .address)
+        available_bike_stands = try values.decode(Int.self, forKey: .available_bike_stands)
+        available_bikes = try values.decode(Int.self, forKey: .available_bikes)
+        banking = try values.decode(Bool.self, forKey: .banking)
+        bike_stands = try values.decode(Int.self, forKey: .bike_stands)
+        bonus = try values.decode(Bool.self, forKey: .bonus)
+        contract_name = try values.decode(String.self, forKey: .contract_name)
+        last_update = Date()
+        if let dateUpdate = try? values.decode(Date.self, forKey: .last_update) {
+            last_update = dateUpdate
+        }
+        name = try values.decode(String.self, forKey: .name)
+        number = try values.decode(Int.self, forKey: .number)
+        position = try values.decode(Position.self, forKey: .position)
+        status = try values.decode(String.self, forKey: .status)
+    }
 }
+
