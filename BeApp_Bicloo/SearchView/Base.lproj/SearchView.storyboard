@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="282" y="134"/>
         </scene>
-        <!--Bicloo (Nantes)-->
+        <!--Station bicloo-->
         <scene sceneID="b6J-LE-Uli">
             <objects>
                 <tableViewController id="wND-2i-nU2" customClass="SearchViewController" customModule="BeApp_Bicloo" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                             <outletCollection property="gestureRecognizers" destination="gTB-8t-hZS" appends="YES" id="FxO-Vt-iGu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Bicloo (Nantes)" id="IJ4-49-EmU">
+                    <navigationItem key="navigationItem" title="Station bicloo" id="IJ4-49-EmU">
                         <barButtonItem key="backBarButtonItem" title="Retour" id="oWK-HU-Ygi"/>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="k2d-6s-58k">

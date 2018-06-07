@@ -20,25 +20,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bike station name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVQ-2S-6NX">
-                        <rect key="frame" x="16" y="4" width="220" height="21"/>
+                        <rect key="frame" x="16" y="4" width="210" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtS-SF-z6t">
-                        <rect key="frame" x="244" y="4" width="60" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUVERTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtS-SF-z6t">
+                        <rect key="frame" x="234" y="4" width="70" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="TUL-eA-1lY"/>
+                            <constraint firstAttribute="width" constant="70" id="TUL-eA-1lY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDd-zQ-2MS">
-                        <rect key="frame" x="193" y="47" width="40" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="gpR-51-tik"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 / 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDd-zQ-2MS">
+                        <rect key="frame" x="193" y="47" width="47" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -58,7 +55,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banking" translatesAutoresizingMaskIntoConstraints="NO" id="OMY-kO-rys" customClass="CustomImageView" customModule="BeApp_Bicloo" customModuleProvider="target">
-                        <rect key="frame" x="251.5" y="33" width="45" height="45"/>
+                        <rect key="frame" x="246.5" y="33" width="45" height="45"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="45" id="5mh-Na-wJY"/>
                             <constraint firstAttribute="height" constant="45" id="93R-MA-Uwe"/>
@@ -78,7 +75,6 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="vtS-SF-z6t" firstAttribute="centerX" secondItem="OMY-kO-rys" secondAttribute="centerX" id="6Tb-6J-bOl"/>
                     <constraint firstItem="vUz-do-ucl" firstAttribute="leading" secondItem="m9m-Ro-ihK" secondAttribute="trailing" constant="8" id="6Vl-Mq-Zav"/>
                     <constraint firstItem="RqI-P9-Gns" firstAttribute="centerY" secondItem="m9m-Ro-ihK" secondAttribute="centerY" id="7NJ-X7-kUq"/>
                     <constraint firstItem="ptC-EA-UzZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9fP-oy-sW7"/>
@@ -86,6 +82,7 @@
                     <constraint firstItem="vtS-SF-z6t" firstAttribute="centerY" secondItem="UVQ-2S-6NX" secondAttribute="centerY" id="Fgw-SX-yEC"/>
                     <constraint firstItem="RqI-P9-Gns" firstAttribute="centerY" secondItem="vUz-do-ucl" secondAttribute="centerY" id="Ggd-QK-Lj7"/>
                     <constraint firstItem="RqI-P9-Gns" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="2.5" id="H5x-Yx-CvU"/>
+                    <constraint firstItem="OMY-kO-rys" firstAttribute="centerX" secondItem="vtS-SF-z6t" secondAttribute="centerX" id="JfX-aS-VK6"/>
                     <constraint firstItem="vtS-SF-z6t" firstAttribute="leading" secondItem="UVQ-2S-6NX" secondAttribute="trailing" constant="8" id="Q8G-Nr-5Qi"/>
                     <constraint firstItem="RqI-P9-Gns" firstAttribute="top" secondItem="UVQ-2S-6NX" secondAttribute="bottom" constant="8" id="aKd-HG-SoW"/>
                     <constraint firstAttribute="trailing" secondItem="ptC-EA-UzZ" secondAttribute="trailing" constant="16" id="cB3-Jz-jxU"/>
@@ -108,7 +105,7 @@
                 <outlet property="bikeImage" destination="m9m-Ro-ihK" id="Hgw-No-nXo"/>
                 <outlet property="parkingAvailable" destination="nDd-zQ-2MS" id="XPq-8D-eCX"/>
                 <outlet property="parkingImage" destination="RqI-P9-Gns" id="cGh-NH-MBR"/>
-                <outlet property="stationName" destination="UVQ-2S-6NX" id="dxJ-7U-cpi"/>
+                <outlet property="stationName" destination="UVQ-2S-6NX" id="cKl-Sg-ASP"/>
                 <outlet property="stationStatus" destination="vtS-SF-z6t" id="eCr-ya-mCj"/>
                 <outlet property="updatedDate" destination="ptC-EA-UzZ" id="Q88-25-NEu"/>
             </connections>

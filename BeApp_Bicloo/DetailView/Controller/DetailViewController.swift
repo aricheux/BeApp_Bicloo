@@ -14,8 +14,7 @@ class DetailViewController: UIViewController {
     
     var detailStation = BikeStation()
     
-    
-    @IBOutlet weak var statioStatus: UILabel!
+    @IBOutlet weak var stationStatus: UILabel!
     @IBOutlet weak var stationName: UILabel!
     @IBOutlet weak var stationAddress: UILabel!
     @IBOutlet weak var bikeAvailable: UILabel!
@@ -33,23 +32,24 @@ class DetailViewController: UIViewController {
     }
 
     func setupContent() {
-        statioStatus.text = detailStation.status
         if detailStation.status == "OPEN" {
-            statioStatus.textColor = FlatUIColors.emerald()
+            stationStatus.text = "OUVERTE"
+            stationStatus.textColor = FlatUIColors.emerald()
         } else {
-            statioStatus.textColor = FlatUIColors.alizarin()
+            stationStatus.text = "FERMEE"
+            stationStatus.textColor = FlatUIColors.alizarin()
         }
         stationName.text = detailStation.name
         stationAddress.text = detailStation.address.lowercased()
-        bikeAvailable.text = "\(detailStation.available_bikes) / \(detailStation.bike_stands)"
-        parkingAvailable.text = "\(detailStation.available_bike_stands) / \(detailStation.bike_stands)"
+        bikeAvailable.text = String(format: "%02d" + " / " + "%02d", detailStation.available_bikes, detailStation.bike_stands)
+        parkingAvailable.text = String(format: "%02d" + " / " + "%02d", detailStation.available_bike_stands, detailStation.bike_stands)
         bikeImage.setBackgroundColorWith(rangeValue: detailStation.available_bikes, rangeMax: detailStation.bike_stands)
         parkingImage.setBackgroundColorWith(rangeValue: detailStation.available_bike_stands, rangeMax: detailStation.bike_stands)
         if detailStation.banking {
-            bankingImage.image = #imageLiteral(resourceName: "banking")
+            bankingImage.backgroundColor = FlatUIColors.emerald()
             bankingText.text = "Guichet disponible"
         } else {
-            bankingImage.image = #imageLiteral(resourceName: "noBanking")
+            bankingImage.backgroundColor = FlatUIColors.alizarin()
             bankingText.text = "Guichet indisponible"
         }
         updatedDate.text = detailStation.last_update
