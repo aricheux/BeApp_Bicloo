@@ -25,6 +25,7 @@
 		71B0073220C6A63300362F70 /* SegmentedControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0073020C6A63300362F70 /* SegmentedControlCell.xib */; };
 		71B31A6520C5D59500B2F0FC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B31A6420C5D59500B2F0FC /* DataManager.swift */; };
 		71B31A6820C5D63100B2F0FC /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B31A6720C5D63100B2F0FC /* BikeStation.swift */; };
+		71F27DB120C966DB004FFA2B /* MessagePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F27DB020C966DB004FFA2B /* MessagePopUp.swift */; };
 		F646DC9158C473E719C5AB7A /* Pods_BeApp_BiclooUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4830F0DBF5FCA277DB699C29 /* Pods_BeApp_BiclooUITests.framework */; };
 		F735C6D00FEE28BA38BAD660 /* Pods_BeApp_BiclooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331C568E9D0EB1954E9849F0 /* Pods_BeApp_BiclooTests.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		71B0073020C6A63300362F70 /* SegmentedControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedControlCell.xib; sourceTree = "<group>"; };
 		71B31A6420C5D59500B2F0FC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		71B31A6720C5D63100B2F0FC /* BikeStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStation.swift; sourceTree = "<group>"; };
+		71F27DB020C966DB004FFA2B /* MessagePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePopUp.swift; sourceTree = "<group>"; };
 		7367471C1FDAEAF09C7803A7 /* Pods-BeApp_Bicloo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_Bicloo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo.release.xcconfig"; sourceTree = "<group>"; };
 		B10EA47FCEE27E76AB1F1EB0 /* Pods-BeApp_BiclooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_BiclooTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_BiclooTests/Pods-BeApp_BiclooTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C04920348C93DFCDE86D4365 /* Pods-BeApp_Bicloo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_Bicloo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		71B31A6620C5D60D00B2F0FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				71F27DB020C966DB004FFA2B /* MessagePopUp.swift */,
 				71B31A6720C5D63100B2F0FC /* BikeStation.swift */,
 				71B0072720C6807800362F70 /* StationData.swift */,
 			);
@@ -486,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F27DB120C966DB004FFA2B /* MessagePopUp.swift in Sources */,
 				71B0072820C6807800362F70 /* StationData.swift in Sources */,
 				710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */,
 				71B0073120C6A63300362F70 /* SegmentedControlCell.swift in Sources */,

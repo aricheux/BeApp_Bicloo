@@ -61,7 +61,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bicloo (Nantes)" id="IJ4-49-EmU">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="oWK-HU-Ygi"/>
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="oWK-HU-Ygi"/>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="k2d-6s-58k">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

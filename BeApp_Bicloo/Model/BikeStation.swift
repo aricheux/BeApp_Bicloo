@@ -20,7 +20,7 @@ class BikeStation: Object {
     @objc dynamic var last_update: String = ""
     @objc dynamic var name: String = ""
     @objc dynamic var number: Int = 0
-    @objc dynamic var lattidude: Double = 0.0
+    @objc dynamic var latidude: Double = 0.0
     @objc dynamic var longitude: Double = 0.0
     @objc dynamic var status: String = ""
     
@@ -34,7 +34,7 @@ class BikeStation: Object {
         self.bonus = stationData.bonus
         self.contract_name = stationData.contract_name
         self.name = stationData.name
-        self.lattidude = stationData.position.lat
+        self.latidude = stationData.position.lat
         self.longitude = stationData.position.lng
         self.status = stationData.status
         // Formattage de la date

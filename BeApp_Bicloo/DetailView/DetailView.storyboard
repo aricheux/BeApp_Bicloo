@@ -102,6 +102,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiU-rd-IVW">
+                                <rect key="frame" x="127.5" y="328" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="0GI-Ad-Ojw"/>
+                                </constraints>
+                                <state key="normal" title="Ouvrir sur Plans"/>
+                                <connections>
+                                    <action selector="openMapForPlace" destination="6p9-TW-Wnj" eventType="touchUpInside" id="1gM-yg-B4A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -113,6 +123,7 @@
                             <constraint firstItem="j0m-M6-TZE" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="24" id="Crc-7P-6W7"/>
                             <constraint firstItem="pZa-PO-mfs" firstAttribute="centerY" secondItem="b4d-iw-OMJ" secondAttribute="centerY" id="EH2-kV-gZM"/>
                             <constraint firstItem="HlE-hI-J4b" firstAttribute="trailing" secondItem="0q5-55-1qE" secondAttribute="trailing" constant="16" id="I2p-Gc-Vc5"/>
+                            <constraint firstItem="oiU-rd-IVW" firstAttribute="centerX" secondItem="PJR-Y6-hg3" secondAttribute="centerX" id="IyH-mo-nrQ"/>
                             <constraint firstItem="LuI-d8-Ebx" firstAttribute="centerY" secondItem="xcq-eo-Tde" secondAttribute="centerY" id="MFb-8B-QfQ"/>
                             <constraint firstItem="j0m-M6-TZE" firstAttribute="top" secondItem="xcq-eo-Tde" secondAttribute="bottom" constant="16" id="Myg-f5-VNe"/>
                             <constraint firstItem="51V-vN-ehX" firstAttribute="top" secondItem="rdS-t7-ZNb" secondAttribute="bottom" constant="16" id="QKk-W8-REc"/>
@@ -128,6 +139,7 @@
                             <constraint firstItem="dQ8-ep-TcL" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="16" id="lyq-cG-px4"/>
                             <constraint firstItem="dQ8-ep-TcL" firstAttribute="top" secondItem="0q5-55-1qE" secondAttribute="bottom" constant="4" id="nFB-Un-3af"/>
                             <constraint firstItem="0q5-55-1qE" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="16" id="pcY-6B-C0Y"/>
+                            <constraint firstItem="oiU-rd-IVW" firstAttribute="top" secondItem="51V-vN-ehX" secondAttribute="bottom" constant="16" id="r9K-pJ-rea"/>
                             <constraint firstItem="0q5-55-1qE" firstAttribute="top" secondItem="5cy-is-kAb" secondAttribute="bottom" constant="16" id="uSg-C2-RDX"/>
                             <constraint firstItem="LuI-d8-Ebx" firstAttribute="leading" secondItem="xcq-eo-Tde" secondAttribute="trailing" constant="16" id="vwh-ro-SEK"/>
                             <constraint firstItem="xcq-eo-Tde" firstAttribute="top" secondItem="b4d-iw-OMJ" secondAttribute="bottom" constant="16" id="whf-f8-LbT"/>

@@ -14,6 +14,7 @@ class SearchViewController: UITableViewController {
     let dataManager = DataManager()
     let realm = try! Realm()
     var realmBikeStations: [BikeStation] = []
+    let popUp = MessagePopUp()
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -33,7 +34,7 @@ class SearchViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "SegmentedControlCell", bundle: nil), forCellReuseIdentifier: "SegmentedControlCell")
         tableView.register(UINib(nibName: "BikeStationCell", bundle: nil), forCellReuseIdentifier: "BikeStationCell")
-        // Add Refresh Control to Table View
+        // update data when user refresh table view
         self.refreshControl?.addTarget(self, action: #selector(refreshStationData(_:)), for: .valueChanged)
     }
     
@@ -51,8 +52,14 @@ class SearchViewController: UITableViewController {
     func getBikeStationData(){
         dataManager.getBikeStationData { (result) in
             switch result {
-            case .failure(let error):
-                print(error)
+            case .failure(_):
+                self.popUp.showMessageWith("Erreur", "Impossible de charger les stations", self, .RetryButton, completion: { (choice) in
+                    if choice == .RetryPushed {
+                        self.getBikeStationData()
+                    } else if choice == .CancelPushed {
+                        self.refreshControl?.endRefreshing()
+                    }
+                })
             case .success(let bikeData):
                 self.writeRealmDataWith(bikeData)
                 self.tableView.reloadData()
@@ -79,7 +86,6 @@ class SearchViewController: UITableViewController {
     }
     
     @objc func segmentControlChanged(_ sender: UISegmentedControl) {
-        
         if let segmentTitle = sender.titleForSegment(at: sender.selectedSegmentIndex) {
             var resultBikeStation = realm.objects(BikeStation.self)
             if sender.selectedSegmentIndex > 0 {
@@ -153,7 +159,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var resultBikeStation = realm.objects(BikeStation.self)
         if !searchText.isEmpty {
-            resultBikeStation = resultBikeStation.filter("address CONTAINS '\(searchText)'")
+            resultBikeStation = resultBikeStation.filter("name CONTAINS '\(searchText)'")
         }
         self.realmBikeStations = Array(resultBikeStation)
         self.tableView.reloadData()

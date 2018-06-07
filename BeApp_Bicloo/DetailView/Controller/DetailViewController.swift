@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import FlatUIColors
 
 class DetailViewController: UIViewController {
@@ -52,5 +53,23 @@ class DetailViewController: UIViewController {
             bankingText.text = "Guichet indisponible"
         }
         updatedDate.text = detailStation.last_update
+    }
+    
+    @IBAction func openMapForPlace() {
+        
+        let latitude = detailStation.latidude
+        let longitude = detailStation.longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = detailStation.name
+        mapItem.openInMaps(launchOptions: options)
     }
 }
