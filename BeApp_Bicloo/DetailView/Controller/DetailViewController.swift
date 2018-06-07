@@ -60,7 +60,7 @@ class DetailViewController: UIViewController {
         let latitude = detailStation.latidude
         let longitude = detailStation.longitude
         
-        let regionDistance:CLLocationDistance = 10000
+        let regionDistance:CLLocationDistance = 2000
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
         let options = [

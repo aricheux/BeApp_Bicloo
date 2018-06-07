@@ -86,14 +86,16 @@ class SearchViewController: UITableViewController {
     }
     
     @objc func segmentControlChanged(_ sender: UISegmentedControl) {
-        if let segmentTitle = sender.titleForSegment(at: sender.selectedSegmentIndex) {
-            var resultBikeStation = realm.objects(BikeStation.self)
-            if sender.selectedSegmentIndex > 0 {
-                resultBikeStation = resultBikeStation.filter("status CONTAINS '\(segmentTitle)'")
-            }
-            self.realmBikeStations = Array(resultBikeStation)
-            self.tableView.reloadData()
+        var resultBikeStation = realm.objects(BikeStation.self)
+        
+        if sender.selectedSegmentIndex == 1 {
+            resultBikeStation = resultBikeStation.filter("status CONTAINS 'OPEN'")
+        } else if sender.selectedSegmentIndex == 2 {
+            resultBikeStation = resultBikeStation.filter("status CONTAINS 'CLOSED'")
         }
+        self.realmBikeStations = Array(resultBikeStation)
+        
+        self.tableView.reloadData()
     }
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
