@@ -7,7 +7,8 @@ target 'BeApp_Bicloo' do
 
   # Pods for BeApp_Bicloo
 pod 'Alamofire', '~> 4.7'
-pod 'RealmSwift'
+pod 'RealmSwift', '~> 3.7.0'
+pod 'FlatUIColors'
 
   target 'BeApp_BiclooTests' do
     inherit! :search_paths

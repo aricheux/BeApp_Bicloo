@@ -8,9 +8,23 @@
 
 import Foundation
 import UIKit
+import FlatUIColors
 
-extension UIImageView {
-    func setupBorderLayer() {
+class CustomImageView: UIImageView {
+    
+    override init(image: UIImage?) {
+        super.init(image: image)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func layoutSubviews() {
         self.layer.borderWidth = 2.0
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = 4.0
@@ -20,11 +34,11 @@ extension UIImageView {
         var color = UIColor()
         let percentage = (rangeValue * 100) / rangeMax
         if percentage == 0 {
-            color = UIColor.red
+            color = FlatUIColors.alizarin()
         } else if percentage < 30 {
-            color = UIColor.yellow
+            color = FlatUIColors.sunflower()
         } else {
-            color = UIColor.green
+            color = FlatUIColors.emerald()
         }
         self.backgroundColor = color
     }

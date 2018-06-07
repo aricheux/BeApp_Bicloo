@@ -7,29 +7,50 @@
 //
 
 import UIKit
+import FlatUIColors
 
 class DetailViewController: UIViewController {
-
+    
+    var detailStation = BikeStation()
+    
+    
+    @IBOutlet weak var statioStatus: UILabel!
+    @IBOutlet weak var stationName: UILabel!
+    @IBOutlet weak var stationAddress: UILabel!
+    @IBOutlet weak var bikeAvailable: UILabel!
+    @IBOutlet weak var parkingAvailable: UILabel!
+    @IBOutlet weak var bikeImage: CustomImageView!
+    @IBOutlet weak var parkingImage: CustomImageView!
+    @IBOutlet weak var bankingText: UILabel!
+    @IBOutlet weak var bankingImage: CustomImageView!
+    @IBOutlet weak var updatedDate: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupContent()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupContent() {
+        statioStatus.text = detailStation.status
+        if detailStation.status == "OPEN" {
+            statioStatus.textColor = FlatUIColors.emerald()
+        } else {
+            statioStatus.textColor = FlatUIColors.alizarin()
+        }
+        stationName.text = detailStation.name
+        stationAddress.text = detailStation.address.lowercased()
+        bikeAvailable.text = "\(detailStation.available_bikes) / \(detailStation.bike_stands)"
+        parkingAvailable.text = "\(detailStation.available_bike_stands) / \(detailStation.bike_stands)"
+        bikeImage.setBackgroundColorWith(rangeValue: detailStation.available_bikes, rangeMax: detailStation.bike_stands)
+        parkingImage.setBackgroundColorWith(rangeValue: detailStation.available_bike_stands, rangeMax: detailStation.bike_stands)
+        if detailStation.banking {
+            bankingImage.image = #imageLiteral(resourceName: "banking")
+            bankingText.text = "Guichet disponible"
+        } else {
+            bankingImage.image = #imageLiteral(resourceName: "noBanking")
+            bankingText.text = "Guichet indisponible"
+        }
+        updatedDate.text = detailStation.last_update
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

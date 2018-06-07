@@ -19,7 +19,7 @@
 		710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */; };
 		713CE8FB20C7017E0048C004 /* BikeStationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713CE8F920C7017E0048C004 /* BikeStationCell.swift */; };
 		713CE8FC20C7017E0048C004 /* BikeStationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713CE8FA20C7017E0048C004 /* BikeStationCell.xib */; };
-		713CE8FF20C7265F0048C004 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713CE8FE20C7265F0048C004 /* UIImageView.swift */; };
+		713CE8FF20C7265F0048C004 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713CE8FE20C7265F0048C004 /* CustomImageView.swift */; };
 		71B0072820C6807800362F70 /* StationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0072720C6807800362F70 /* StationData.swift */; };
 		71B0073120C6A63300362F70 /* SegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0072F20C6A63300362F70 /* SegmentedControlCell.swift */; };
 		71B0073220C6A63300362F70 /* SegmentedControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0073020C6A63300362F70 /* SegmentedControlCell.xib */; };
@@ -68,7 +68,7 @@
 		710B4E0F20C5D0EB00A89744 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		713CE8F920C7017E0048C004 /* BikeStationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationCell.swift; sourceTree = "<group>"; };
 		713CE8FA20C7017E0048C004 /* BikeStationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeStationCell.xib; sourceTree = "<group>"; };
-		713CE8FE20C7265F0048C004 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		713CE8FE20C7265F0048C004 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		71B0072720C6807800362F70 /* StationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationData.swift; sourceTree = "<group>"; };
 		71B0072F20C6A63300362F70 /* SegmentedControlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlCell.swift; sourceTree = "<group>"; };
 		71B0073020C6A63300362F70 /* SegmentedControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedControlCell.xib; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				71B31A6620C5D60D00B2F0FC /* Model */,
 				710B4E0920C5D03A00A89744 /* SearchView */,
 				710B4E0A20C5D04900A89744 /* DetailView */,
-				713CE8FD20C7263E0048C004 /* Extension */,
+				713CE8FD20C7263E0048C004 /* CustomUI */,
 				710B4E0820C5CFDE00A89744 /* Ressources */,
 			);
 			path = BeApp_Bicloo;
@@ -231,12 +231,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		713CE8FD20C7263E0048C004 /* Extension */ = {
+		713CE8FD20C7263E0048C004 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
-				713CE8FE20C7265F0048C004 /* UIImageView.swift */,
+				713CE8FE20C7265F0048C004 /* CustomImageView.swift */,
 			);
-			path = Extension;
+			path = CustomUI;
 			sourceTree = "<group>";
 		};
 		71B0072A20C6A5CE00362F70 /* Cell */ = {
@@ -463,12 +463,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FlatUIColors/FlatUIColors.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlatUIColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -489,7 +491,7 @@
 				71B0073120C6A63300362F70 /* SegmentedControlCell.swift in Sources */,
 				71B31A6520C5D59500B2F0FC /* DataManager.swift in Sources */,
 				713CE8FB20C7017E0048C004 /* BikeStationCell.swift in Sources */,
-				713CE8FF20C7265F0048C004 /* UIImageView.swift in Sources */,
+				713CE8FF20C7265F0048C004 /* CustomImageView.swift in Sources */,
 				71B31A6820C5D63100B2F0FC /* BikeStation.swift in Sources */,
 				710B4DDA20C5CFA900A89744 /* SearchViewController.swift in Sources */,
 				710B4DD820C5CFA900A89744 /* AppDelegate.swift in Sources */,

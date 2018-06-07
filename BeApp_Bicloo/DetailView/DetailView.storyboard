@@ -10,20 +10,152 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail View Controller-->
+        <!--Station détail-->
         <scene sceneID="ppd-hD-hUt">
             <objects>
-                <viewController id="6p9-TW-Wnj" customClass="DetailViewController" customModule="BeApp_Bicloo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailView" title="Station détail" id="6p9-TW-Wnj" customClass="DetailViewController" customModule="BeApp_Bicloo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJR-Y6-hg3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station name " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q5-55-1qE">
+                                <rect key="frame" x="16" y="72.5" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wXK-CB-4RV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-ep-TcL">
+                                <rect key="frame" x="16" y="106.5" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 / 20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZa-PO-mfs">
+                                <rect key="frame" x="80" y="151.5" width="60" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="oPk-a4-Naw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 / 20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuI-d8-Ebx">
+                                <rect key="frame" x="80" y="207.5" width="60" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="z8x-KT-TFm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vélos disponibles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIP-9T-L6y">
+                                <rect key="frame" x="148" y="151.5" width="118" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="places disponibles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="af8-Sj-SDH">
+                                <rect key="frame" x="148" y="207.5" width="127" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guichet indisponible" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-t7-ZNb">
+                                <rect key="frame" x="80" y="263.5" width="140" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mis à jour à 8:20 le 07/06/2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51V-vN-ehX">
+                                <rect key="frame" x="16" y="297.5" width="343" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="b4d-iw-OMJ" customClass="CustomImageView" customModule="BeApp_Bicloo" customModuleProvider="target">
+                                <rect key="frame" x="24" y="140.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="tVq-cz-IlS"/>
+                                    <constraint firstAttribute="height" constant="40" id="txB-gu-uNl"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parking" translatesAutoresizingMaskIntoConstraints="NO" id="xcq-eo-Tde" customClass="CustomImageView" customModule="BeApp_Bicloo" customModuleProvider="target">
+                                <rect key="frame" x="24" y="196.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wX1-RD-U0d"/>
+                                    <constraint firstAttribute="width" constant="40" id="ytf-8g-k5K"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banking" translatesAutoresizingMaskIntoConstraints="NO" id="j0m-M6-TZE" customClass="CustomImageView" customModule="BeApp_Bicloo" customModuleProvider="target">
+                                <rect key="frame" x="24" y="252.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Sog-jJ-7YB"/>
+                                    <constraint firstAttribute="width" constant="40" id="pS8-oQ-dvY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOSED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cy-is-kAb">
+                                <rect key="frame" x="154" y="36" width="68.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5cy-is-kAb" firstAttribute="top" secondItem="HlE-hI-J4b" secondAttribute="top" constant="16" id="3vL-aZ-j1J"/>
+                            <constraint firstItem="xcq-eo-Tde" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="24" id="5Pt-D6-rjL"/>
+                            <constraint firstItem="af8-Sj-SDH" firstAttribute="centerY" secondItem="xcq-eo-Tde" secondAttribute="centerY" id="7dT-bh-yd6"/>
+                            <constraint firstItem="rdS-t7-ZNb" firstAttribute="leading" secondItem="j0m-M6-TZE" secondAttribute="trailing" constant="16" id="9n2-io-jfG"/>
+                            <constraint firstItem="b4d-iw-OMJ" firstAttribute="top" secondItem="dQ8-ep-TcL" secondAttribute="bottom" constant="16" id="Buk-ez-jVv"/>
+                            <constraint firstItem="j0m-M6-TZE" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="24" id="Crc-7P-6W7"/>
+                            <constraint firstItem="pZa-PO-mfs" firstAttribute="centerY" secondItem="b4d-iw-OMJ" secondAttribute="centerY" id="EH2-kV-gZM"/>
+                            <constraint firstItem="HlE-hI-J4b" firstAttribute="trailing" secondItem="0q5-55-1qE" secondAttribute="trailing" constant="16" id="I2p-Gc-Vc5"/>
+                            <constraint firstItem="LuI-d8-Ebx" firstAttribute="centerY" secondItem="xcq-eo-Tde" secondAttribute="centerY" id="MFb-8B-QfQ"/>
+                            <constraint firstItem="j0m-M6-TZE" firstAttribute="top" secondItem="xcq-eo-Tde" secondAttribute="bottom" constant="16" id="Myg-f5-VNe"/>
+                            <constraint firstItem="51V-vN-ehX" firstAttribute="top" secondItem="rdS-t7-ZNb" secondAttribute="bottom" constant="16" id="QKk-W8-REc"/>
+                            <constraint firstItem="PIP-9T-L6y" firstAttribute="centerY" secondItem="pZa-PO-mfs" secondAttribute="centerY" id="Qua-Fm-oT8"/>
+                            <constraint firstItem="b4d-iw-OMJ" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="24" id="T0j-NU-reV"/>
+                            <constraint firstItem="51V-vN-ehX" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="16" id="TPr-gM-MPJ"/>
+                            <constraint firstItem="pZa-PO-mfs" firstAttribute="leading" secondItem="b4d-iw-OMJ" secondAttribute="trailing" constant="16" id="UPv-ke-hgt"/>
+                            <constraint firstItem="HlE-hI-J4b" firstAttribute="trailing" secondItem="51V-vN-ehX" secondAttribute="trailing" constant="16" id="Y5L-2n-Dww"/>
+                            <constraint firstItem="PIP-9T-L6y" firstAttribute="leading" secondItem="pZa-PO-mfs" secondAttribute="trailing" constant="8" id="Yqe-0m-6Ov"/>
+                            <constraint firstItem="5cy-is-kAb" firstAttribute="centerX" secondItem="PJR-Y6-hg3" secondAttribute="centerX" id="aZZ-5H-Ik3"/>
+                            <constraint firstItem="af8-Sj-SDH" firstAttribute="leading" secondItem="LuI-d8-Ebx" secondAttribute="trailing" constant="8" id="bmS-jQ-D7i"/>
+                            <constraint firstItem="HlE-hI-J4b" firstAttribute="trailing" secondItem="dQ8-ep-TcL" secondAttribute="trailing" constant="16" id="ika-xG-Nb1"/>
+                            <constraint firstItem="dQ8-ep-TcL" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="16" id="lyq-cG-px4"/>
+                            <constraint firstItem="dQ8-ep-TcL" firstAttribute="top" secondItem="0q5-55-1qE" secondAttribute="bottom" constant="4" id="nFB-Un-3af"/>
+                            <constraint firstItem="0q5-55-1qE" firstAttribute="leading" secondItem="HlE-hI-J4b" secondAttribute="leading" constant="16" id="pcY-6B-C0Y"/>
+                            <constraint firstItem="0q5-55-1qE" firstAttribute="top" secondItem="5cy-is-kAb" secondAttribute="bottom" constant="16" id="uSg-C2-RDX"/>
+                            <constraint firstItem="LuI-d8-Ebx" firstAttribute="leading" secondItem="xcq-eo-Tde" secondAttribute="trailing" constant="16" id="vwh-ro-SEK"/>
+                            <constraint firstItem="xcq-eo-Tde" firstAttribute="top" secondItem="b4d-iw-OMJ" secondAttribute="bottom" constant="16" id="whf-f8-LbT"/>
+                            <constraint firstItem="rdS-t7-ZNb" firstAttribute="centerY" secondItem="j0m-M6-TZE" secondAttribute="centerY" id="yJZ-T3-G5A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HlE-hI-J4b"/>
                     </view>
+                    <connections>
+                        <outlet property="bankingImage" destination="j0m-M6-TZE" id="RRQ-bD-Sgn"/>
+                        <outlet property="bankingText" destination="rdS-t7-ZNb" id="4WR-n9-hHH"/>
+                        <outlet property="bikeAvailable" destination="pZa-PO-mfs" id="kX7-Uy-MB1"/>
+                        <outlet property="bikeImage" destination="b4d-iw-OMJ" id="OaH-b6-yLR"/>
+                        <outlet property="parkingAvailable" destination="LuI-d8-Ebx" id="7Zs-3x-cPa"/>
+                        <outlet property="parkingImage" destination="xcq-eo-Tde" id="RAk-WP-d2e"/>
+                        <outlet property="statioStatus" destination="5cy-is-kAb" id="qcC-L8-lD3"/>
+                        <outlet property="stationAddress" destination="dQ8-ep-TcL" id="yUi-bI-jTp"/>
+                        <outlet property="stationName" destination="0q5-55-1qE" id="Vkg-ZV-XY0"/>
+                        <outlet property="updatedDate" destination="51V-vN-ehX" id="cf9-7C-4Uf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCi-WA-5a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-619" y="53"/>
+            <point key="canvasLocation" x="-620" y="52.623688155922046"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="banking" width="50" height="50"/>
+        <image name="bike" width="65" height="65"/>
+        <image name="parking" width="50" height="50"/>
+    </resources>
 </document>

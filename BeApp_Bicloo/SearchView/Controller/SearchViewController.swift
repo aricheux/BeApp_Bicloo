@@ -34,7 +34,6 @@ class SearchViewController: UITableViewController {
         tableView.register(UINib(nibName: "SegmentedControlCell", bundle: nil), forCellReuseIdentifier: "SegmentedControlCell")
         tableView.register(UINib(nibName: "BikeStationCell", bundle: nil), forCellReuseIdentifier: "BikeStationCell")
         // Add Refresh Control to Table View
-        self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(refreshStationData(_:)), for: .valueChanged)
     }
     
@@ -93,7 +92,6 @@ class SearchViewController: UITableViewController {
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         searchBar.endEditing(true)
-        searchBar.resignFirstResponder()
     }
 }
 
@@ -127,12 +125,12 @@ extension SearchViewController {
         switch indexPath.section {
         case 0:
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "SegmentedControlCell", for: indexPath) as! SegmentedControlCell
+            cell.selectionStyle = .none
             cell.segmentControl.addTarget(self, action: #selector(self.segmentControlChanged(_:)), for: .valueChanged)
             return cell
             
         case 1:
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "BikeStationCell", for: indexPath) as! BikeStationCell
-            cell.setupBorder()
             cell.setupContentWith(bikeStation: self.realmBikeStations[indexPath.row])
             return cell
             
@@ -140,6 +138,13 @@ extension SearchViewController {
             return UITableViewCell()
             
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mainStoryboard : UIStoryboard = UIStoryboard(name: "DetailView", bundle:nil)
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        vc.detailStation = self.realmBikeStations[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
