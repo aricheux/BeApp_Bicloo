@@ -33,7 +33,7 @@ public struct FlatUIColors
             colorString = colorString.fui_substringFromIndex(1)
         }
         
-        let stringLength = colorString.count
+        let stringLength = colorString.characters.count
         if stringLength != 6 && stringLength != 8 {
             return nil
         }
