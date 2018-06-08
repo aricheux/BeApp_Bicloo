@@ -25,7 +25,7 @@ class CustomImageView: UIImageView {
     }
     
     override func layoutSubviews() {
-        self.layer.borderWidth = 2.0
+        self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = 4.0
     }

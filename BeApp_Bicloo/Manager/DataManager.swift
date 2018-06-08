@@ -14,7 +14,7 @@ enum requestResult {
 }
 
 class DataManager {
-    let JCDecauxUrl = "https://api.jcdecaux.com/vls/v1/stations?contract=Lyon"
+    let JCDecauxUrl = "https://api.jcdecaux.com/vls/v1/stations?contract=Nantes"
     let JCDecauxApiKey = "97a7e4e1830bbd06f3d9041ce47a6cc64e175806"
     
     func getBikeStationData(completion: @escaping (requestResult) -> ()) {
