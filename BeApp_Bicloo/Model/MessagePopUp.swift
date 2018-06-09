@@ -27,17 +27,6 @@ enum PopUpType {
 
 /// Class to handle the message pop-up
 class MessagePopUp {
-    /// Singleton to share the RecipeManager to all project
-    static let sharedInstance = MessagePopUp()
-
-    /// Define the UIAlertController and present it in the viewController
-    ///
-    /// - Parameters:
-    ///   - title: title of the UIAlert
-    ///   - message: Message of the UIAlert
-    ///   - viewController: viewController to show the UIAlert
-    ///   - typeButton: define the button of the UIAlert
-    ///   - completion: return which button is pushed
     func showMessageWith(_ title: String, _ message: String, _ viewController: UIViewController, _ typeButton: PopUpType, completion: @escaping (PopUpChoice) -> ()) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
