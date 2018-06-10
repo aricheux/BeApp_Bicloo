@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/// Class to handle the realm bike station object
 class BikeStation: Object {
     @objc dynamic var address: String = ""
     @objc dynamic var available_bike_stands: Int = 0
@@ -24,6 +25,7 @@ class BikeStation: Object {
     @objc dynamic var longitude: Double = 0.0
     @objc dynamic var status: String = ""
     
+    /// Initialize the object with the station data from API
     func initWith(stationData: StationData) {
         self.address = stationData.address
         self.available_bike_stands = stationData.available_bike_stands

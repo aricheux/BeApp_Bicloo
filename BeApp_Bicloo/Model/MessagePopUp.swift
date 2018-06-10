@@ -27,6 +27,7 @@ enum PopUpType {
 
 /// Class to handle the message pop-up
 class MessagePopUp {
+    /// Show a pop-up with custom title, message and button
     func showMessageWith(_ title: String, _ message: String, _ viewController: UIViewController, _ typeButton: PopUpType, completion: @escaping (PopUpChoice) -> ()) {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

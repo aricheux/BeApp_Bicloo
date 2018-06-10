@@ -10,6 +10,7 @@ import UIKit
 
 class SegmentedControlCell: UITableViewCell {
 
+    /// Connexion to the segment control
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     override func awakeFromNib() {

@@ -8,11 +8,13 @@
 
 import Foundation
 
+/// Position structure to match to the JSON data
 struct Position: Codable {
     var lat: Double
     var lng: Double
 }
 
+/// StationData structure to convert with codable
 struct StationData: Codable {
     var address: String
     var available_bike_stands: Int
@@ -27,6 +29,7 @@ struct StationData: Codable {
     var position: Position
     var status: String
     
+    /// Handle the decoder of codable
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         address = try values.decode(String.self, forKey: .address)

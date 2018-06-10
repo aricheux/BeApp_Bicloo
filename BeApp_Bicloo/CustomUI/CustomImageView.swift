@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FlatUIColors
 
+/// Handle the custom image view for all image view in the app
 class CustomImageView: UIImageView {
     
     override init(image: UIImage?) {
@@ -24,12 +25,14 @@ class CustomImageView: UIImageView {
         super.init(coder: aDecoder)
     }
     
+    /// Setup border of the custom view
     override func layoutSubviews() {
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = 4.0
     }
     
+    /// Setup the background color with the pourcentage value
     func setBackgroundColorWith(rangeValue: Int, rangeMax: Int) {
         var color = UIColor()
         let percentage = (rangeValue * 100) / rangeMax

@@ -9,26 +9,28 @@
 import UIKit
 import RealmSwift
 
+/// Class to handle the search view
 class SearchViewController: UITableViewController {
-    
+    /// manager to get the data with network request
     let dataManager = DataManager()
+    /// A Realm instance who represents a Realm database.
     let realm = try! Realm()
+    /// Array to convert json data to bike station data
     var realmBikeStations: [BikeStation] = []
+    /// pop-up to show a message to the user
     let popUp = MessagePopUp()
+    /// Connexion to the search bar in the tableView
     @IBOutlet weak var searchBar: UISearchBar!
     
+    /// Do action when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupContent()
+        setupTableView()
         getContent()
     }
     
-    func setupContent() {
-        searchBar.delegate = self
-        setupTableView()
-    }
-    
+    /// Configure and setup table view feature
     func setupTableView(){
         tableView.accessibilityIdentifier = "bikeStationTable"
         tableView.tableFooterView = UIView()
@@ -38,17 +40,19 @@ class SearchViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: #selector(refreshStationData(_:)), for: .valueChanged)
     }
     
+    /// Get bike station data from realm database or send the request
     func getContent(){
         let realmBikeStation = realm.objects(BikeStation.self)
+        
         if realmBikeStation.count == 0 {
             getBikeStationData()
         } else {
-            //let array = realmBikeStation.filter("name CONTAINS 'A'")
             self.realmBikeStations = Array(realmBikeStation)
             self.tableView.reloadData()
         }
     }
     
+    /// Send the request to get the bike data and handle the result
     func getBikeStationData(){
         dataManager.getBikeStationData { (result) in
             switch result {
@@ -67,6 +71,7 @@ class SearchViewController: UITableViewController {
         }
     }
     
+    /// Write bike station data to the realm database
     func writeRealmDataWith(_ bikeData: [StationData]) {
         self.realmBikeStations.removeAll()
         for bikeData in bikeData {
@@ -80,11 +85,13 @@ class SearchViewController: UITableViewController {
         }
     }
     
+    /// Handle the pull to refresh gesture
     @objc func refreshStationData(_ sender: Any) {
         self.getBikeStationData()
         self.refreshControl?.endRefreshing()
     }
     
+    /// Handle the segment control when the value changed
     @objc func segmentControlChanged(_ sender: UISegmentedControl) {
         var resultBikeStation = realm.objects(BikeStation.self)
         
@@ -98,6 +105,7 @@ class SearchViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    /// Dismiss keyboard when the user tap outside the search bar.
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         searchBar.endEditing(true)
     }
@@ -106,6 +114,7 @@ class SearchViewController: UITableViewController {
 // UITableView datasource and delegate method
 extension SearchViewController {
     
+    /// Set the height row
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -117,10 +126,12 @@ extension SearchViewController {
         }
     }
     
+    /// Set the number of section
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
+    /// Set the number of row by section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 1 {
             return self.realmBikeStations.count
@@ -128,6 +139,7 @@ extension SearchViewController {
         return 1
     }
     
+    /// Configure all cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
@@ -148,16 +160,19 @@ extension SearchViewController {
         }
     }
     
+    /// Push to the detail view when a row is pushed with the bike station data
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mainStoryboard : UIStoryboard = UIStoryboard(name: "DetailView", bundle:nil)
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
-        vc.detailStation = self.realmBikeStations[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        let detailView = mainStoryboard.instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        detailView.detailStation = self.realmBikeStations[indexPath.row]
+        self.navigationController?.pushViewController(detailView, animated: true)
     }
 }
 
+/// Handle UISearchBarDelegate method
 extension SearchViewController: UISearchBarDelegate {
     
+    /// Update the table view the search text changed
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var resultBikeStation = realm.objects(BikeStation.self)
         if !searchText.isEmpty {

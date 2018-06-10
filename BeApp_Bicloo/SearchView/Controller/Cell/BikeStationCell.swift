@@ -11,6 +11,7 @@ import FlatUIColors
 
 class BikeStationCell: UITableViewCell {
 
+    /// Connexion to all component of the cell
     @IBOutlet weak var stationName: UILabel!
     @IBOutlet weak var stationStatus: UILabel!
     @IBOutlet weak var bikeImage: CustomImageView!
@@ -30,6 +31,7 @@ class BikeStationCell: UITableViewCell {
 
     }
     
+    /// Setup all component with a bike station object
     func setupContentWith(bikeStation: BikeStation) {
         self.stationName.text = bikeStation.name
         if bikeStation.status == "OPEN" {

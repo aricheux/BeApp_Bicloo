@@ -10,10 +10,11 @@ import UIKit
 import MapKit
 import FlatUIColors
 
+/// Handle the detail view
 class DetailViewController: UIViewController {
-    
+    /// Bike station object from search view
     var detailStation = BikeStation()
-    
+    /// Connexion to all component of the view
     @IBOutlet weak var stationStatus: UILabel!
     @IBOutlet weak var stationName: UILabel!
     @IBOutlet weak var stationAddress: UILabel!
@@ -25,12 +26,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var bankingImage: CustomImageView!
     @IBOutlet weak var updatedDate: UILabel!
     
+    /// Do action when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupContent()
     }
 
+    /// Setup all component with the detail bike station object
     func setupContent() {
         if detailStation.status == "OPEN" {
             stationStatus.text = "OUVERTE"
@@ -55,8 +58,8 @@ class DetailViewController: UIViewController {
         updatedDate.text = detailStation.last_update
     }
     
+    /// Open plans app with position of the bike station
     @IBAction func openMapForPlace() {
-        
         let latitude = detailStation.latidude
         let longitude = detailStation.longitude
         
