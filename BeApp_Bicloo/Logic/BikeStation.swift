@@ -26,7 +26,7 @@ class BikeStation: Object {
     @objc dynamic var status: String = ""
     
     /// Initialize the object with the station data from API
-    func initWith(stationData: StationData) {
+    func initWith(stationData: BikeStationDTO) {
         self.address = stationData.address
         self.available_bike_stands = stationData.available_bike_stands
         self.available_bikes = stationData.available_bikes
@@ -42,6 +42,6 @@ class BikeStation: Object {
         // Formattage de la date
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "HH:mm' le 'dd/MM/y"
-        self.last_update = "Mis à jour à " + dateFormater.string(from: stationData.last_update)
+        self.last_update = "Mis à jour à " + dateFormater.string(from: stationData.last_update!)
     }
 }

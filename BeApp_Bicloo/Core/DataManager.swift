@@ -15,7 +15,7 @@ import Alamofire
 /// - success: share the bike data when the request is done.
 /// - failure: share the error if they have an error.
 enum requestResult {
-    case success([StationData]), failure(Error)
+    case success([BikeStationDTO]), failure(Error)
 }
 
 /// API client to get the JSON Data
@@ -33,7 +33,7 @@ class DataManager {
                 if let data = response.data {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .millisecondsSince1970
-                    let bikeStation = try! decoder.decode([StationData].self, from: data)
+                    let bikeStation = try! decoder.decode([BikeStationDTO].self, from: data)
                     completion(.success(bikeStation))
                 }
                 

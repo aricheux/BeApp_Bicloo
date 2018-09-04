@@ -72,7 +72,7 @@ class SearchViewController: UITableViewController {
     }
     
     /// Write bike station data to the realm database
-    func writeRealmDataWith(_ bikeData: [StationData]) {
+    func writeRealmDataWith(_ bikeData: [BikeStationDTO]) {
         self.realmBikeStations.removeAll()
         for bikeData in bikeData {
             self.realmBikeStations.append(BikeStation())
