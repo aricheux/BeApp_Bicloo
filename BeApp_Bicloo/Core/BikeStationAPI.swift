@@ -9,11 +9,11 @@
 import Foundation
 import Moya
 
-enum NantesAPI {
+enum BikeStationAPI {
     case bikeStation
 }
 
-extension NantesAPI: TargetType {
+extension BikeStationAPI: TargetType {
     
     var baseURL: URL {
         return URL(string: "https://api.jcdecaux.com")!
