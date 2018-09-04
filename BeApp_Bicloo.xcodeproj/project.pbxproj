@@ -21,7 +21,6 @@
 		713CE8FF20C7265F0048C004 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713CE8FE20C7265F0048C004 /* CustomImageView.swift */; };
 		71B0073120C6A63300362F70 /* SegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0072F20C6A63300362F70 /* SegmentedControlCell.swift */; };
 		71B0073220C6A63300362F70 /* SegmentedControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B0073020C6A63300362F70 /* SegmentedControlCell.xib */; };
-		71B31A6520C5D59500B2F0FC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B31A6420C5D59500B2F0FC /* DataManager.swift */; };
 		71F27DB120C966DB004FFA2B /* MessagePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F27DB020C966DB004FFA2B /* MessagePopUp.swift */; };
 		71F27DB320C98B7A004FFA2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F27DB220C98B7A004FFA2B /* Assets.xcassets */; };
 		9472F703213EADE80031FF25 /* BikeStationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9472F702213EADE80031FF25 /* BikeStationDTO.swift */; };
@@ -74,7 +73,6 @@
 		713CE8FE20C7265F0048C004 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		71B0072F20C6A63300362F70 /* SegmentedControlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlCell.swift; sourceTree = "<group>"; };
 		71B0073020C6A63300362F70 /* SegmentedControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedControlCell.xib; sourceTree = "<group>"; };
-		71B31A6420C5D59500B2F0FC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		71F27DB020C966DB004FFA2B /* MessagePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePopUp.swift; sourceTree = "<group>"; };
 		71F27DB220C98B7A004FFA2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7367471C1FDAEAF09C7803A7 /* Pods-BeApp_Bicloo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeApp_Bicloo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeApp_Bicloo/Pods-BeApp_Bicloo.release.xcconfig"; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 		949C3689213EA63B007FA3CC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				71B31A6420C5D59500B2F0FC /* DataManager.swift */,
 				9472F708213EB0570031FF25 /* BikeStationRestManager.swift */,
 				9472F702213EADE80031FF25 /* BikeStationDTO.swift */,
 				9472F704213EAF190031FF25 /* BikeStationAPI.swift */,
@@ -522,7 +519,6 @@
 				71F27DB120C966DB004FFA2B /* MessagePopUp.swift in Sources */,
 				710B4E1020C5D0EB00A89744 /* DetailViewController.swift in Sources */,
 				71B0073120C6A63300362F70 /* SegmentedControlCell.swift in Sources */,
-				71B31A6520C5D59500B2F0FC /* DataManager.swift in Sources */,
 				713CE8FB20C7017E0048C004 /* BikeStationCell.swift in Sources */,
 				9472F705213EAF190031FF25 /* BikeStationAPI.swift in Sources */,
 				713CE8FF20C7265F0048C004 /* CustomImageView.swift in Sources */,

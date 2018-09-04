@@ -14,8 +14,6 @@ import RxSwift
 class SearchViewController: UITableViewController {
     /// Connexion to the search bar in the tableView
     @IBOutlet weak var searchBar: UISearchBar!
-    /// manager to get the data with network request
-    let dataManager = DataManager()
     /// A Realm instance who represents a Realm database.
     let realm = try! Realm()
     /// Array to convert json data to bike station data
