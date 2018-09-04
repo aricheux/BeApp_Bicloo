@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import FlatUIColors
 
 /// Handle the custom image view for all image view in the app
 class CustomImageView: UIImageView {
@@ -37,11 +36,11 @@ class CustomImageView: UIImageView {
         var color = UIColor()
         let percentage = (rangeValue * 100) / rangeMax
         if percentage == 0 {
-            color = FlatUIColors.alizarin()
+            color = UIColor.green
         } else if percentage < 30 {
-            color = FlatUIColors.sunflower()
+            color = UIColor.yellow
         } else {
-            color = FlatUIColors.emerald()
+            color = UIColor.red
         }
         self.backgroundColor = color
     }

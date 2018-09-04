@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import FlatUIColors
 
 /// Handle the detail view
 class DetailViewController: UIViewController {
@@ -37,10 +36,10 @@ class DetailViewController: UIViewController {
     func setupContent() {
         if detailStation.status == "OPEN" {
             stationStatus.text = "OUVERTE"
-            stationStatus.textColor = FlatUIColors.emerald()
+            stationStatus.textColor = UIColor.green
         } else {
             stationStatus.text = "FERMEE"
-            stationStatus.textColor = FlatUIColors.alizarin()
+            stationStatus.textColor = UIColor.red
         }
         stationName.text = detailStation.name
         stationAddress.text = detailStation.address.lowercased()
@@ -49,10 +48,10 @@ class DetailViewController: UIViewController {
         bikeImage.setBackgroundColorWith(rangeValue: detailStation.available_bikes, rangeMax: detailStation.bike_stands)
         parkingImage.setBackgroundColorWith(rangeValue: detailStation.available_bike_stands, rangeMax: detailStation.bike_stands)
         if detailStation.banking {
-            bankingImage.backgroundColor = FlatUIColors.emerald()
+            bankingImage.backgroundColor = UIColor.green
             bankingText.text = "Guichet disponible"
         } else {
-            bankingImage.backgroundColor = FlatUIColors.alizarin()
+            bankingImage.backgroundColor = UIColor.red
             bankingText.text = "Guichet indisponible"
         }
         updatedDate.text = detailStation.last_update

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FlatUIColors
 
 class BikeStationCell: UITableViewCell {
 
@@ -36,10 +35,10 @@ class BikeStationCell: UITableViewCell {
         self.stationName.text = bikeStation.name
         if bikeStation.status == "OPEN" {
             self.stationStatus.text = "OUVERTE"
-            self.stationStatus.textColor = FlatUIColors.emerald()
+            self.stationStatus.textColor = UIColor.green
         } else {
             self.stationStatus.text = "FERMEE"
-            self.stationStatus.textColor = FlatUIColors.alizarin()
+            self.stationStatus.textColor = UIColor.red
         }
         self.bikeAvailable.text = String(format: "%02d" + " / " + "%02d", bikeStation.available_bikes, bikeStation.bike_stands)
         self.parkingAvailable.text = String(format: "%02d" + " / " + "%02d", bikeStation.available_bike_stands, bikeStation.bike_stands)
@@ -47,9 +46,9 @@ class BikeStationCell: UITableViewCell {
         self.bikeImage.setBackgroundColorWith(rangeValue: bikeStation.available_bikes, rangeMax: bikeStation.bike_stands)
         self.parkingImage.setBackgroundColorWith(rangeValue: bikeStation.available_bike_stands, rangeMax: bikeStation.bike_stands)
         if bikeStation.banking {
-            self.bankingImage.backgroundColor = FlatUIColors.emerald()
+            self.bankingImage.backgroundColor = UIColor.green
         } else {
-            self.bankingImage.backgroundColor = FlatUIColors.alizarin()
+            self.bankingImage.backgroundColor = UIColor.red
         }
     }
     
