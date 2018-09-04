@@ -8,19 +8,22 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
 
 /// Class to handle the search view
 class SearchViewController: UITableViewController {
+    /// Connexion to the search bar in the tableView
+    @IBOutlet weak var searchBar: UISearchBar!
     /// manager to get the data with network request
     let dataManager = DataManager()
     /// A Realm instance who represents a Realm database.
     let realm = try! Realm()
     /// Array to convert json data to bike station data
-    var realmBikeStations: [BikeStation] = []
+    var realmBikeStations: [BikeStationEntity] = []
     /// pop-up to show a message to the user
     let popUp = MessagePopUp()
-    /// Connexion to the search bar in the tableView
-    @IBOutlet weak var searchBar: UISearchBar!
+    // Bag
+    let bag = DisposeBag()
     
     /// Do action when the view is loaded
     override func viewDidLoad() {
@@ -42,7 +45,7 @@ class SearchViewController: UITableViewController {
     
     /// Get bike station data from realm database or send the request
     func getContent(){
-        let realmBikeStation = realm.objects(BikeStation.self)
+        let realmBikeStation = realm.objects(BikeStationEntity.self)
         
         if realmBikeStation.count == 0 {
             getBikeStationData()
@@ -54,34 +57,23 @@ class SearchViewController: UITableViewController {
     
     /// Send the request to get the bike data and handle the result
     func getBikeStationData(){
-        dataManager.getBikeStationData { (result) in
-            switch result {
-            case .failure(_):
-                self.popUp.showMessageWith("Erreur", "Impossible de charger les stations", self, .RetryButton, completion: { (choice) in
-                    if choice == .RetryPushed {
-                        self.getBikeStationData()
-                    } else if choice == .CancelPushed {
-                        self.refreshControl?.endRefreshing()
-                    }
-                })
-            case .success(let bikeData):
-                self.writeRealmDataWith(bikeData)
-                self.tableView.reloadData()
-            }
-        }
+        
+        BikeStationRestManager.shared.getBikeStationObservable()
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: { (_bikeStation) in
+            self.writeRealmDataWith(_bikeStation)
+            self.tableView.reloadData()
+        })
+        .disposed(by: bag)
     }
     
     /// Write bike station data to the realm database
-    func writeRealmDataWith(_ bikeData: [BikeStationDTO]) {
-        self.realmBikeStations.removeAll()
-        for bikeData in bikeData {
-            self.realmBikeStations.append(BikeStation())
-            self.realmBikeStations.last?.initWith(stationData: bikeData)
-        }
+    func writeRealmDataWith(_ bikeData: [BikeStationEntity]) {
+        self.realmBikeStations = bikeData
         
         try! realm.write {
             realm.deleteAll()
-            realm.add(self.realmBikeStations)
+            realm.add(bikeData)
         }
     }
     
@@ -93,7 +85,7 @@ class SearchViewController: UITableViewController {
     
     /// Handle the segment control when the value changed
     @objc func segmentControlChanged(_ sender: UISegmentedControl) {
-        var resultBikeStation = realm.objects(BikeStation.self)
+        var resultBikeStation = realm.objects(BikeStationEntity.self)
         
         if sender.selectedSegmentIndex == 1 {
             resultBikeStation = resultBikeStation.filter("status CONTAINS 'OPEN'")
@@ -174,7 +166,7 @@ extension SearchViewController: UISearchBarDelegate {
     
     /// Update the table view the search text changed
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        var resultBikeStation = realm.objects(BikeStation.self)
+        var resultBikeStation = realm.objects(BikeStationEntity.self)
         if !searchText.isEmpty {
             resultBikeStation = resultBikeStation.filter("name CONTAINS '\(searchText)'")
         }

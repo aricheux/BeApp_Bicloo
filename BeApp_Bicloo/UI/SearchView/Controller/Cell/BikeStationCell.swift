@@ -31,7 +31,7 @@ class BikeStationCell: UITableViewCell {
     }
     
     /// Setup all component with a bike station object
-    func setupContentWith(bikeStation: BikeStation) {
+    func setupContentWith(bikeStation: BikeStationEntity) {
         self.stationName.text = bikeStation.name
         if bikeStation.status == "OPEN" {
             self.stationStatus.text = "OUVERTE"

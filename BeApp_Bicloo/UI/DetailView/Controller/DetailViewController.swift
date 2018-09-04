@@ -12,7 +12,7 @@ import MapKit
 /// Handle the detail view
 class DetailViewController: UIViewController {
     /// Bike station object from search view
-    var detailStation = BikeStation()
+    var detailStation = BikeStationEntity()
     /// Connexion to all component of the view
     @IBOutlet weak var stationStatus: UILabel!
     @IBOutlet weak var stationName: UILabel!
