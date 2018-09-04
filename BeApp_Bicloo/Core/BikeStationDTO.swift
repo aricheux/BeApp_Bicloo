@@ -28,3 +28,12 @@ struct BikeStationDTO: Codable {
     var position: Position
     var status: String
 }
+
+extension BikeStationDTO {
+    func toEntity() -> BikeStationEntity {
+        let bikeStationEntity = BikeStationEntity()
+        bikeStationEntity.initWith(stationData: self)
+        
+        return bikeStationEntity
+    }
+}

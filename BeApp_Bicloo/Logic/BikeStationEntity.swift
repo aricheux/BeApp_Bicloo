@@ -1,16 +1,15 @@
 //
-//  BikeStation.swift
+//  BikeStationEntity.swift
 //  BeApp_Bicloo
 //
-//  Created by RICHEUX Antoine on 04/06/2018.
+//  Created by Antoine Richeux on 04/09/2018.
 //  Copyright © 2018 Richeux Antoine. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-/// Class to handle the realm bike station object
-class BikeStation: Object {
+class BikeStationEntity: Object {
     @objc dynamic var address: String = ""
     @objc dynamic var available_bike_stands: Int = 0
     @objc dynamic var available_bikes: Int = 0

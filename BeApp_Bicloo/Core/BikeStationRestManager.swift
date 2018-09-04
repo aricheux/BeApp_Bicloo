@@ -15,11 +15,13 @@ class BikeStationRestManager {
     static let shared = BikeStationRestManager()
     private let provider = MoyaProvider<BikeStationAPI>()
     
-    func getBikeStationObservable() -> Observable<[BikeStationDTO]> {
+    func getBikeStationObservable() -> Observable<[BikeStationEntity]> {
         return provider.rx.request(.bikeStation)
         .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
         .asObservable()
         .map([BikeStationDTO].self)
+        .flatMap { Observable.from($0) }
+        .map { $0.toEntity() }
+        .toArray()
     }
-
 }
